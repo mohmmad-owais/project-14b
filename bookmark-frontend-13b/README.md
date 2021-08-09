@@ -1,2 +1,2 @@
 project link:
-https://dev.dch154yncjsod.amplifyapp.com/
+http://d1n8dgndieaenu.cloudfront.net/
