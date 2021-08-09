@@ -39,6 +39,7 @@ export class Project13bStack extends cdk.Stack {
     const myBucket = new s3.Bucket(this, "bookmarkBucket", {
       versioned: true,
       websiteIndexDocument: "index.html",
+      publicReadAccess: true,
     });
 
     const dist = new cloudfront.Distribution(this, "myDistribution", {
