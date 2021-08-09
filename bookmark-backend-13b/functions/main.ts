@@ -14,7 +14,7 @@ type AppSyncEvent = {
   };
 };
 
-function helper() {
+function helper(body: Bookmark) {
   const eventBridge = new AWS.EventBridge();
 
   return eventBridge
@@ -24,7 +24,7 @@ function helper() {
           EventBusName: "default",
           Source: "bookmarkRule",
           DetailType: "Event trigger from bookmark",
-          Detail: `{ "Event": "Event Trigger Sucessfully" }`,
+          Detail: `{ "Event": "${body.title}" }`,
         },
       ],
     })
@@ -32,9 +32,9 @@ function helper() {
 }
 
 exports.handler = async (event: AppSyncEvent) => {
-  const e = await helper();
   switch (event.info.fieldName) {
     case "addBookmark":
+      const e = await helper(event.arguments.bookmark);
       return await addBookmark(event.arguments.bookmark);
     case "getBookmark":
       return await getBookmark();

@@ -1,2 +1,2 @@
 project link:
-https://dev.d39i4e5r67by4h.amplifyapp.com
+https://dev.dch154yncjsod.amplifyapp.com/
