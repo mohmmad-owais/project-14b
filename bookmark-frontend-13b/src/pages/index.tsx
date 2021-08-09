@@ -78,7 +78,7 @@ export default function Home() {
         <h1>Loading ...</h1>
       ) : (
         <div>
-          <h2>Project 13-B</h2>
+          <h2>Project 13B & 14B</h2>
           <label>
             Bookmark:
             <input ref={bookmarkTitleRef} />
