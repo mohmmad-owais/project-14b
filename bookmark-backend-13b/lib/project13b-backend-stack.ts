@@ -206,8 +206,8 @@ export class Project13bStack extends cdk.Stack {
       ],
     });
 
-    // The rule that filters events to match country == "PK" and sends them to the consumer Lambda.
-    const PKrule = new events.Rule(this, "bookmarkLambdaRule", {
+    
+    const rule = new events.Rule(this, "bookmarkLambdaRule", {
       targets: [new targets.CodePipeline(pipeline)],
       description: "Filter events that come bookmark Lambda",
       eventPattern: {
